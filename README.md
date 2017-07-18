@@ -1,6 +1,6 @@
-# AMPIFY
+# [Beta] AMPIFY
 
-Converts static HTML to AMP-ready HTML.
+Converts static HTML to AMP-ready HTML. This is a work in progress and is currently fairly narrow.
 
 ### Getting Started
 
@@ -14,7 +14,7 @@ yarn add ampify
 const ampify = require('ampifyjs');
 const someHTML = '<html>...</html>';
 
-ampify(someHTML, '/url-to-original-page', ($) =>{
+ampify(someHTML, '/url-to-original-page', ($) => {
   // Do anything you want here to the AMP page using jQuery syntax from cheerio
 
   // For example, lets add Google Analytics
@@ -24,3 +24,7 @@ ampify(someHTML, '/url-to-original-page', ($) =>{
     </amp-analytics>');
 })
 ```
+
+## Requirements
+
+- All of your image tags must have heights and widths

@@ -1,6 +1,6 @@
 {
   "name": "ampifyjs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A function to convert HTML markup into AMP html",
   "main": "index.js",
   "scripts": {
