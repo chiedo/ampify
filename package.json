@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/chiedo/ampify/issues"
   },
-  "homepage": "https://github.com/chiedo/ampify#readme"
+  "homepage": "https://github.com/chiedo/ampify#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2"
+  }
 }
