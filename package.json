@@ -1,0 +1,22 @@
+{
+  "name": "ampify",
+  "version": "0.0.1",
+  "description": "A function to convert HTML markup into AMP html",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chiedo/ampify.git"
+  },
+  "keywords": [
+    "AMP"
+  ],
+  "author": "Chiedo <chiedo@chiedo.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chiedo/ampify/issues"
+  },
+  "homepage": "https://github.com/chiedo/ampify#readme"
+}
