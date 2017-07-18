@@ -1,6 +1,6 @@
 const cheerio = require('cheerio');
 
-module.exports.default = function(html, baseUrl, extras = () => {}) {
+module.exports = function(html, baseUrl, extras = () => {}) {
   let $;
 
   // The tags that we will convert to amp versions
