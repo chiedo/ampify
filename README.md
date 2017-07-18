@@ -11,7 +11,7 @@ yarn add ampify
 ### Usage
 
 ```
-const ampify = require('ampify');
+const ampify = require('ampifyjs');
 const someHTML = '<html>...</html>';
 
 ampify(someHTML, '/url-to-original-page', ($) =>{
