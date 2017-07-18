@@ -2,13 +2,13 @@
 
 Converts static HTML to AMP-ready HTML.
 
-Getting Started
+### Getting Started
 
 ```
 yarn add ampify
 ```
 
-Usage
+### Usage
 
 ```
 const ampify = require('ampify');
