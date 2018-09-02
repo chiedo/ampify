@@ -23,8 +23,13 @@ module.exports = function(html, baseUrl, extras = () => {}) {
   //remove all script tags. If any specific script tags are needed
   //they can be added back later. This gives us a clean slate though
   $('script').each(function() {
-    // Dont remove structured data though
-    if($(this).attr('type') !== 'application/ld+json' || $(this).attr('type') !== 'application/json'){
+    // Dont remove structured data & json darta & amp files scrips though
+    const type = $(this).attr('type');
+    const src = $(this).attr('src');
+    
+    if (type === 'application/ld+json' || type === 'application/json' || src && src.includes('ampproject')) {
+      // dont remove ld+json / json / ampproject scripts
+    } else {
       $(this).remove();
     }
   });
