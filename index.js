@@ -34,10 +34,6 @@ module.exports = function(html, baseUrl, extras = () => {}) {
     }
   });
 
-
-  // Remove google back analytics
-  $('script[custom-element="amp-analytics"]').remove();
-
   // Add AMP HTML5 Video Support
   if($('body video').length > 0) {
     $('script[custom-element="amp-video"]').remove();
