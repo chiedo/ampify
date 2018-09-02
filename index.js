@@ -24,7 +24,7 @@ module.exports = function(html, baseUrl, extras = () => {}) {
   //they can be added back later. This gives us a clean slate though
   $('script').each(function() {
     // Dont remove structured data though
-    if($(this).attr('type') !== 'application/ld+json'){
+    if($(this).attr('type') !== 'application/ld+json' || $(this).attr('type') !== 'application/json'){
       $(this).remove();
     }
   });
