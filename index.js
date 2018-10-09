@@ -59,15 +59,10 @@ module.exports = function(html, baseUrl, extras = () => {}) {
   }
 
   // The amp version of the site should not have any amphtml.
-  // We'll set the correct canonical link later
   $('head').find('link[rel="amphtml"]').remove();
-  $('head').find('link[rel="canonical"]').remove();
 
   // Remove preloader code
   $('head').find('link[as="script"]').remove();
-
-  // Add the canonical link to the URL as specified by the AMP standards
-  $('head').append(`<link rel="canonical" href="${baseUrl}" />`);
 
   // If the viewport meta isn't correctly set in regards to the amp standards, then set it
   if ($('head meta[content="width=device-width,minimum-scale=1,initial-scale=1"]').length === 0) {
