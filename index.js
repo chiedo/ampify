@@ -23,15 +23,16 @@ module.exports = function(html, baseUrl, extras = () => {}) {
   //remove all script tags. If any specific script tags are needed
   //they can be added back later. This gives us a clean slate though
   $('script').each(function() {
-    // Dont remove structured data though
-    if($(this).attr('type') !== 'application/ld+json'){
+    // Dont remove structured data & json darta & amp files scrips though
+    const type = $(this).attr('type');
+    const src = $(this).attr('src');
+    
+    if (type === 'application/ld+json' || type === 'application/json' || src && src.includes('ampproject')) {
+      // dont remove ld+json / json / ampproject scripts
+    } else {
       $(this).remove();
     }
   });
-
-
-  // Remove google back analytics
-  $('script[custom-element="amp-analytics"]').remove();
 
   // Add AMP HTML5 Video Support
   if($('body video').length > 0) {
@@ -58,15 +59,10 @@ module.exports = function(html, baseUrl, extras = () => {}) {
   }
 
   // The amp version of the site should not have any amphtml.
-  // We'll set the correct canonical link later
   $('head').find('link[rel="amphtml"]').remove();
-  $('head').find('link[rel="canonical"]').remove();
 
   // Remove preloader code
   $('head').find('link[as="script"]').remove();
-
-  // Add the canonical link to the URL as specified by the AMP standards
-  $('head').append(`<link rel="canonical" href="${baseUrl}" />`);
 
   // If the viewport meta isn't correctly set in regards to the amp standards, then set it
   if ($('head meta[content="width=device-width,minimum-scale=1,initial-scale=1"]').length === 0) {
